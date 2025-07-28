@@ -12,22 +12,52 @@ const ChatBot: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const fetchAIResponse = async (userMessage: string): Promise<string> => {
+    try {
+      const response = await fetch("https://backend.buildpicoapps.com/aero/run/llm-api?pk=v1-Z0FBQUFBQm5IZkJDMlNyYUVUTBZkWWuUHNahSjQZtmeoQYjMvmHe1WYuCTdxejhLSzBhNWNMMXNzZlp3c09BSTR6YW1Sc1BmdGNTVk1GY0liT1RoWDZZX1lNZlZ0Z1dqd3c9PQ==", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          prompt: userMessage
+        })
+      });
+
+      if (!response.ok) {
+        console.error("Error:", response.statusText);
+        return "Il y a eu une erreur. Veuillez réessayer plus tard.";
+      }
+
+      const data = await response.json();
+      if (data.status === "success") {
+        return data.text;
+      } else {
+        console.error("Error:", data);
+        return "Il y a eu une erreur. Veuillez réessayer plus tard.";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      return "Il y a eu une erreur. Veuillez réessayer plus tard.";
+    }
+  };
+
   const handleSend = async () => {
     if (!input.trim()) return;
+    
     const userMessage: Message = { role: 'user', content: input };
     setMessages((msgs) => [...msgs, userMessage]);
     setInput('');
     setLoading(true);
-    // Appel API OpenAI à brancher ici
+
     try {
-      // const response = await fetch('/api/chat', { ... })
-      // const data = await response.json();
-      // Simule une réponse IA pour l'instant :
-      const botMessage: Message = { role: 'bot', content: "Je suis un bot IA. Pose-moi une question !" };
+      const aiResponse = await fetchAIResponse(input);
+      const botMessage: Message = { role: 'bot', content: aiResponse };
       setMessages((msgs) => [...msgs, botMessage]);
     } catch (e) {
       setMessages((msgs) => [...msgs, { role: 'bot', content: "Erreur lors de la connexion à l'IA." }]);
     }
+    
     setLoading(false);
   };
 

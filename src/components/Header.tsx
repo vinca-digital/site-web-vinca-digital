@@ -3,6 +3,7 @@ import { Menu, X, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { useTheme } from 'next-themes';
+import vincaLogo from '@/assets/vinca-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,11 +21,11 @@ const Header = () => {
 
   const navItems = [
     { label: 'Accueil', href: '/' },
-    { label: 'Forfait', href: '#about' },
+    { label: 'Forfaits', href: '/forfaits' },
     { label: 'Services', href: '/services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -33,16 +34,13 @@ const Header = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Nouveau logo */}
           <div className="flex items-center space-x-2">
-            <div className="relative">
-              <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-primary animate-pulse-glow">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Vinca Digital
-            </span>
+            <img
+              src="/logo vinca hz wtc.png"
+              alt="Vinca Digital Logo"
+              className="h-32 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}

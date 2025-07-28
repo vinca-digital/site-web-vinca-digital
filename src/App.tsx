@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "next-themes";
 import ChatBot from './components/ChatBot';
+import Portfolio from './pages/portfolio';
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Forfaits from "./pages/Forfaits";
+
 
 const queryClient = new QueryClient();
 
@@ -21,6 +26,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/forfaits" element={<Forfaits />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -21,14 +21,14 @@ const Services = () => {
       id: 'social',
       title: 'Services Social',
       icon: Users,
-      gradient: 'from-red-400 to-red-600', // couleur rouge
+      gradient: 'from-red-400 to-red-600',
       description: 'Stratégies réseaux sociaux pour développer votre communauté'
     },
     {
       id: 'visual',
       title: 'Services Visual',
       icon: Palette,
-      gradient: 'from-yellow-300 to-yellow-500', // couleur jaune
+      gradient: 'from-yellow-400 to-yellow-600',
       description: 'Création graphique et visuelle pour votre identité de marque'
     }
   ];
@@ -196,7 +196,7 @@ const Services = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-600/20 animate-float"></div>
           <div className="absolute top-40 right-20 w-16 h-16 rounded-full bg-gradient-to-r from-pink-400/20 to-purple-600/20 animate-float" style={{animationDelay: '1s'}}></div>
           <div className="absolute bottom-20 left-1/3 w-12 h-12 rounded-full bg-gradient-to-r from-orange-400/20 to-red-600/20 animate-float" style={{animationDelay: '2s'}}></div>
@@ -212,7 +212,7 @@ const Services = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
               Solutions digitales complètes pour propulser votre entreprise vers le succès
             </p>
-            <div className="flex justify-center mb-12 animate-fade-in" style={{animationDelay: '0.4s'}}>
+            <div className="flex justify-center mb-12 animate-fade-in relative z-20" style={{animationDelay: '0.4s'}}>
               <div className="glass p-1 rounded-2xl border-electric">
                 <div className="flex space-x-1">
                   {serviceCategories.map((category) => {
@@ -221,7 +221,7 @@ const Services = () => {
                       <button
                         key={category.id}
                         onClick={() => setActiveCategory(category.id)}
-                        className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center space-x-2 ${
+                        className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center space-x-2 relative z-30 cursor-pointer ${
                           activeCategory === category.id
                             ? `bg-gradient-to-r ${category.gradient} text-white shadow-electric`
                             : 'text-muted-foreground hover:text-foreground'
