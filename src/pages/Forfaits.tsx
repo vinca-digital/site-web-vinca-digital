@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Check, X, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+<<<<<<< HEAD
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+=======
+>>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
 import { Badge } from '@/components/ui/badge';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -190,12 +193,17 @@ const Forfaits = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+<<<<<<< HEAD
               Des solutions complètes adaptées à vos besoins, avec une tarification 
+=======
+              Des solutions complètes adaptées à vos besoins, avec une tarification
+>>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
               transparente et des services de qualité professionnelle.
             </p>
           </div>
 
           {/* Tabs */}
+<<<<<<< HEAD
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-16 glass">
               <TabsTrigger value="web" className="flex items-center gap-2">
@@ -214,6 +222,50 @@ const Forfaits = () => {
 
             {/* Tab Content */}
             <TabsContent value={activeTab} className="space-y-8">
+=======
+          <div className="w-full relative z-10">
+            <div className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-16 h-16 rounded-2xl bg-muted p-2 shadow-md glass relative">
+              <button
+                id="web-tab"
+                onClick={() => setActiveTab('web')}
+                className={`flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 relative z-20 ${
+                  activeTab === 'web' 
+                    ? 'bg-background text-foreground shadow' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <span className="text-xl">🌐</span>
+                <span>Web</span>
+              </button>
+              <button
+                id="social-tab"
+                onClick={() => setActiveTab('social')}
+                className={`flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 relative z-20 ${
+                  activeTab === 'social' 
+                    ? 'bg-background text-foreground shadow' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <span className="text-xl">📱</span>
+                <span>Social</span>
+              </button>
+              <button
+                id="visual-tab"
+                onClick={() => setActiveTab('visual')}
+                className={`flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 relative z-20 ${
+                  activeTab === 'visual' 
+                    ? 'bg-background text-foreground shadow' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                <span className="text-xl">🎨</span>
+                <span>Visual</span>
+              </button>
+            </div>
+
+            {/* Tab Content */}
+            <div className="space-y-8">
+>>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
               {/* Title */}
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold mb-2">{currentData.title}</h2>
@@ -290,8 +342,13 @@ const Forfaits = () => {
                   </Card>
                 ))}
               </div>
+<<<<<<< HEAD
             </TabsContent>
           </Tabs>
+=======
+            </div>
+          </div>
+>>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
 
           {/* Comparison Table */}
           <div className="mt-16">

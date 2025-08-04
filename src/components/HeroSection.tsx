@@ -26,12 +26,21 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
+<<<<<<< HEAD
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-8 animate-pulse-glow">
             <Stars className="w-5 h-5 text-primary" />
             <span className="text-sm font-medium">Plus qu'un prestataire, votre partenaire</span>
             <Zap className="w-5 h-5 text-secondary" />
           </div>
+=======
+          {/* Badge - Hidden */}
+          {/* <div className="inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-8 animate-pulse-glow">
+            <Stars className="w-5 h-5 text-primary" />
+            <span className="text-sm font-medium">Plus qu'un prestataire, VOTRE partenaire</span>
+            <Zap className="w-5 h-5 text-secondary" />
+          </div> */}
+>>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
 
           {/* Main Heading */}
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -68,6 +77,7 @@ const HeroSection = () => {
           </div>
 
           {/* 3D Cards Preview */}
+<<<<<<< HEAD
           <div className="perspective">
             <div className="flex justify-center items-center space-x-6 transform-3d">
               {/* Web Card */}
@@ -95,6 +105,35 @@ const HeroSection = () => {
                 </div>
                 <h3 className="font-bold text-lg">Visual</h3>
                 <p className="text-sm text-muted-foreground">Design & Branding</p>
+=======
+          <div className="w-full">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+              {/* Web Card */}
+              <div className="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out w-64 h-40 flex flex-col justify-center items-center transform hover:scale-105 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3 shadow-md">
+                  <span className="text-2xl">🌐</span>
+                </div>
+                <h3 className="font-bold text-lg text-white">Web</h3>
+                <p className="text-sm text-gray-300">Sites & Apps</p>
+              </div>
+
+              {/* Social Card */}
+              <div className="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out w-64 h-40 flex flex-col justify-center items-center transform hover:scale-105 hover:-translate-y-1" style={{ animationDelay: '0.1s' }}>
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-3 shadow-md">
+                  <span className="text-2xl">📱</span>
+                </div>
+                <h3 className="font-bold text-lg text-white">Social</h3>
+                <p className="text-sm text-gray-300">Réseaux & Contenu</p>
+              </div>
+
+              {/* Visual Card */}
+              <div className="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out w-64 h-40 flex flex-col justify-center items-center transform hover:scale-105 hover:-translate-y-1" style={{ animationDelay: '0.2s' }}>
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-3 shadow-md">
+                  <span className="text-2xl">🎨</span>
+                </div>
+                <h3 className="font-bold text-lg text-white">Visual</h3>
+                <p className="text-sm text-gray-300">Design & Branding</p>
+>>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
               </div>
             </div>
           </div>
