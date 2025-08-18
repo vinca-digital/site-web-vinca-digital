@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { Check, X, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-<<<<<<< HEAD
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-=======
->>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
 import { Badge } from '@/components/ui/badge';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -193,88 +190,45 @@ const Forfaits = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-<<<<<<< HEAD
               Des solutions complètes adaptées à vos besoins, avec une tarification 
-=======
-              Des solutions complètes adaptées à vos besoins, avec une tarification
->>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
               transparente et des services de qualité professionnelle.
             </p>
           </div>
 
           {/* Tabs */}
-<<<<<<< HEAD
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-16 glass">
-              <TabsTrigger value="web" className="flex items-center gap-2">
-                <span className="text-lg">🌐</span>
+            <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-16 h-16 rounded-2xl bg-muted p-2 shadow-md glass">
+              <TabsTrigger
+                value="web"
+                className="flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <span className="text-xl">🌐</span>
                 <span>Web</span>
               </TabsTrigger>
-              <TabsTrigger value="social" className="flex items-center gap-2">
-                <span className="text-lg">📱</span>
+              <TabsTrigger
+                value="social"
+                className="flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <span className="text-xl">📱</span>
                 <span>Social</span>
               </TabsTrigger>
-              <TabsTrigger value="visual" className="flex items-center gap-2">
-                <span className="text-lg">🎨</span>
+              <TabsTrigger
+                value="visual"
+                className="flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <span className="text-xl">🎨</span>
                 <span>Visual</span>
               </TabsTrigger>
             </TabsList>
 
-            {/* Tab Content */}
-            <TabsContent value={activeTab} className="space-y-8">
-=======
-          <div className="w-full relative z-10">
-            <div className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-16 h-16 rounded-2xl bg-muted p-2 shadow-md glass relative">
-              <button
-                id="web-tab"
-                onClick={() => setActiveTab('web')}
-                className={`flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 relative z-20 ${
-                  activeTab === 'web' 
-                    ? 'bg-background text-foreground shadow' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                <span className="text-xl">🌐</span>
-                <span>Web</span>
-              </button>
-              <button
-                id="social-tab"
-                onClick={() => setActiveTab('social')}
-                className={`flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 relative z-20 ${
-                  activeTab === 'social' 
-                    ? 'bg-background text-foreground shadow' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                <span className="text-xl">📱</span>
-                <span>Social</span>
-              </button>
-              <button
-                id="visual-tab"
-                onClick={() => setActiveTab('visual')}
-                className={`flex items-center justify-center gap-2 text-base font-medium rounded-xl transition-all px-4 py-2 relative z-20 ${
-                  activeTab === 'visual' 
-                    ? 'bg-background text-foreground shadow' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                <span className="text-xl">🎨</span>
-                <span>Visual</span>
-              </button>
-            </div>
-
-            {/* Tab Content */}
-            <div className="space-y-8">
->>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
-              {/* Title */}
+            {/* Contenus des tabs */}
+            <TabsContent value="web">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-2">{currentData.title}</h2>
-                <p className="text-lg text-muted-foreground">{currentData.subtitle}</p>
+                <h2 className="text-3xl font-bold mb-2">{pricingData.web.title}</h2>
+                <p className="text-lg text-muted-foreground">{pricingData.web.subtitle}</p>
               </div>
-
-              {/* Pricing Grid */}
               <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {currentData.plans.map((plan, index) => (
+                {pricingData.web.plans.map((plan, index) => (
                   <Card 
                     key={plan.name}
                     className={`glass shadow-card hover:shadow-glow transition-smooth relative ${
@@ -290,7 +244,6 @@ const Forfaits = () => {
                         </Badge>
                       </div>
                     )}
-                    
                     <CardHeader className="text-center pb-4">
                       <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
                       <div className="mt-4">
@@ -298,7 +251,6 @@ const Forfaits = () => {
                         <span className="text-muted-foreground ml-2">/{plan.period}</span>
                       </div>
                     </CardHeader>
-                    
                     <CardContent className="space-y-6">
                       <ul className="space-y-3">
                         {plan.features.map((feature, idx) => (
@@ -326,7 +278,6 @@ const Forfaits = () => {
                           </li>
                         ))}
                       </ul>
-                      
                       <Button 
                         className={`w-full transition-bounce group ${
                           plan.recommended 
@@ -342,13 +293,152 @@ const Forfaits = () => {
                   </Card>
                 ))}
               </div>
-<<<<<<< HEAD
+            </TabsContent>
+            <TabsContent value="social">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold mb-2">{pricingData.social.title}</h2>
+                <p className="text-lg text-muted-foreground">{pricingData.social.subtitle}</p>
+              </div>
+              <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {pricingData.social.plans.map((plan, index) => (
+                  <Card 
+                    key={plan.name}
+                    className={`glass shadow-card hover:shadow-glow transition-smooth relative ${
+                      plan.recommended ? 'ring-2 ring-primary scale-105' : ''
+                    }`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    {plan.recommended && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <Badge className="gradient-primary px-4 py-1 text-white">
+                          <Zap className="w-4 h-4 mr-1" />
+                          Recommandé
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader className="text-center pb-4">
+                      <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold text-primary">{plan.price}€</span>
+                        <span className="text-muted-foreground ml-2">/{plan.period}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <ul className="space-y-3">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <div className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3">
+                              {feature.included === true ? (
+                                <Check className="w-5 h-5 text-primary" />
+                              ) : feature.included === false ? (
+                                <X className="w-5 h-5 text-muted-foreground" />
+                              ) : (
+                                <Check className="w-5 h-5 text-primary" />
+                              )}
+                            </div>
+                            <span className={`text-sm ${
+                              feature.included === false ? 'text-muted-foreground line-through' : ''
+                            }`}>
+                              {typeof feature.included === 'string' ? (
+                                <>
+                                  {feature.name}: <span className="font-medium text-primary">{feature.included}</span>
+                                </>
+                              ) : (
+                                feature.name
+                              )}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button 
+                        className={`w-full transition-bounce group ${
+                          plan.recommended 
+                            ? 'gradient-primary hover:scale-105' 
+                            : 'gradient-secondary hover:scale-105'
+                        }`}
+                        size="lg"
+                      >
+                        Prendre ce forfait
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="visual">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold mb-2">{pricingData.visual.title}</h2>
+                <p className="text-lg text-muted-foreground">{pricingData.visual.subtitle}</p>
+              </div>
+              <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {pricingData.visual.plans.map((plan, index) => (
+                  <Card 
+                    key={plan.name}
+                    className={`glass shadow-card hover:shadow-glow transition-smooth relative ${
+                      plan.recommended ? 'ring-2 ring-primary scale-105' : ''
+                    }`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    {plan.recommended && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <Badge className="gradient-primary px-4 py-1 text-white">
+                          <Zap className="w-4 h-4 mr-1" />
+                          Recommandé
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader className="text-center pb-4">
+                      <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold text-primary">{plan.price}€</span>
+                        <span className="text-muted-foreground ml-2">/{plan.period}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <ul className="space-y-3">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <div className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3">
+                              {feature.included === true ? (
+                                <Check className="w-5 h-5 text-primary" />
+                              ) : feature.included === false ? (
+                                <X className="w-5 h-5 text-muted-foreground" />
+                              ) : (
+                                <Check className="w-5 h-5 text-primary" />
+                              )}
+                            </div>
+                            <span className={`text-sm ${
+                              feature.included === false ? 'text-muted-foreground line-through' : ''
+                            }`}>
+                              {typeof feature.included === 'string' ? (
+                                <>
+                                  {feature.name}: <span className="font-medium text-primary">{feature.included}</span>
+                                </>
+                              ) : (
+                                feature.name
+                              )}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button 
+                        className={`w-full transition-bounce group ${
+                          plan.recommended 
+                            ? 'gradient-primary hover:scale-105' 
+                            : 'gradient-secondary hover:scale-105'
+                        }`}
+                        size="lg"
+                      >
+                        Prendre ce forfait
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
-=======
-            </div>
-          </div>
->>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
 
           {/* Comparison Table */}
           <div className="mt-16">

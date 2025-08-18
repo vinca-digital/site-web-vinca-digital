@@ -51,7 +51,7 @@ const AdvantagesSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-6">
+          <div className="inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-6 invisible">
             <span className="text-sm font-medium text-secondary">Avantages</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6">

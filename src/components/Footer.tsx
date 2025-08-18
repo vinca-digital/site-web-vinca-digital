@@ -73,16 +73,6 @@ const Footer = () => {
                   Vinca Digital
                 </span>
               </div>
-              
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-<<<<<<< HEAD
-                Plus qu'un prestataire, votre partenaire de croissance digitale. 
-=======
-                Plus qu'un prestataire, VOTRE partenaire de croissance digitale. 
->>>>>>> 804f145 (Premier commit - mise à jour site Vinca)
-                Nous accompagnons les entrepreneurs avec une équipe pluridisciplinaire 
-                d'experts passionnés.
-              </p>
 
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
